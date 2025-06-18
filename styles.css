@@ -1,0 +1,925 @@
+/* Modern Romantic Theme */
+:root {
+    --primary-color: #4ecdc4;
+    --secondary-color: #45b7af;
+    --accent-color: #2a9d8f;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --gradient-1: linear-gradient(45deg, #4ecdc4, #45b7af);
+    --gradient-2: linear-gradient(45deg, #45b7af, #4ecdc4);
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #ffffff;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(78, 205, 196, 0.3),
+        rgba(255, 255, 255, 0.3),
+        rgba(78, 205, 196, 0.3));
+    background-size: 200% 200%;
+    animation: gradientBG 15s ease infinite;
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-section .couple-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.hero-section .btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #4ecdc4, #45b7af);
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.hero-section .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.6);
+    background: linear-gradient(45deg, #45b7af, #4ecdc4);
+}
+
+.logo-img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    .hero-section .lead {
+        font-size: 1.3rem;
+    }
+    .hero-section .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+    }
+    .logo-img {
+        height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+    .hero-section .btn {
+        padding: 0.7rem 1.8rem;
+        font-size: 1rem;
+    }
+    .logo-img {
+        height: 45px;
+    }
+}
+
+/* Add floating hearts animation */
+.hero-section::after {
+    display: none;
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.4rem;
+    }
+    
+    .hero-section .container {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+}
+
+/* Feature Boxes */
+.feature-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    animation: scaleIn 0.8s ease-out;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-box i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-box::after {
+    content: '✨';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 2rem;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.feature-box h4 {
+    color: #333;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-box p {
+    color: #666;
+    position: relative;
+    z-index: 1;
+}
+
+/* Pricing Cards */
+.pricing-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    background: white;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card .card-body {
+    padding: 2rem;
+}
+
+.pricing-card .card-title {
+    color: #333;
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.pricing-card .price span {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.pricing-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+.pricing-card ul li i {
+    color: #28a745;
+    margin-right: 0.5rem;
+}
+
+/* Profile Cards */
+.profile-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    animation: slideInRight 0.8s ease-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: float 3s ease-in-out infinite;
+}
+
+.tags {
+    margin: 1rem 0;
+}
+
+.tags .badge {
+    background: var(--gradient-2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin: 0.2rem;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.tags .badge:hover {
+    transform: scale(1.1);
+}
+
+.profile-card::after {
+    content: '💫';
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    font-size: 3rem;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.profile-card h4 {
+    color: #333;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-card p {
+    color: #666;
+    position: relative;
+    z-index: 1;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+/* Navigation */
+.navbar {
+    background: transparent !important;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: translateY(-2px);
+}
+
+.navbar-brand:hover .logo-img {
+    transform: scale(1.05);
+}
+
+.brand-text {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .nav-link {
+    color: var(--primary-color) !important;
+}
+
+/* Section Headers */
+section h2 {
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Remove the animated underline */
+section h2:after {
+    display: none;
+}
+
+/* Remove the lineGrow animation since it's no longer needed */
+@keyframes lineGrow {
+    to { width: 0; }
+}
+
+/* Update section spacing */
+section {
+    padding: 80px 0;
+    position: relative;
+}
+
+/* Update section backgrounds */
+#intro {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+#pricing {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+#profiles {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+#contact {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(45deg, #4ecdc4, #45b7af);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #45b7af, #4ecdc4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+}
+
+/* Section Backgrounds */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 0;
+}
+
+/* Card Enhancements */
+.pricing-card, .profile-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pricing-card:hover, .profile-card:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background: var(--gradient-1) !important;
+    color: white;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+    background-size: 100px 100px;
+    opacity: 0.1;
+}
+
+footer p {
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+/* Emoji Styles */
+.emoji {
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+    margin-left: 5px;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Romantic Decorative Elements */
+.hero-section::before {
+    content: '💑';
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.2;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -3s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Floating Hearts Background */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 30%, rgba(255, 182, 193, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 50% 80%, rgba(255, 182, 193, 0.1) 0%, transparent 20%);
+    z-index: -1;
+}
+
+/* WhatsApp Button Enhancement */
+.whatsapp-btn::after {
+    content: '💬';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 0.5; }
+}
+
+/* Container z-index fix */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Apply animations to elements */
+.hero-section h1 {
+    animation: slideUp 1s ease-out;
+}
+
+.hero-section .lead {
+    animation: slideUp 1s ease-out 0.3s backwards;
+}
+
+.hero-section .btn {
+    animation: slideUp 1s ease-out 0.6s backwards;
+}
+
+.feature-box {
+    animation: scaleIn 0.8s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card {
+    animation: slideInLeft 0.8s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card {
+    animation: slideInRight 0.8s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-img {
+    animation: float 3s ease-in-out infinite;
+}
+
+.whatsapp-btn {
+    animation: scaleIn 0.8s ease-out;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    background: #128c7e;
+}
+
+/* Animated gradient background for hero section */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animated section headers */
+section h2 {
+    position: relative;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animated form elements */
+.form-control {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated buttons */
+.btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animated tags */
+.badge {
+    transition: transform 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+}
+
+/* Animated icons */
+.fas {
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover .fas {
+    transform: scale(1.2);
+}
+
+/* Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animated page load */
+body {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+    .feature-box, .pricing-card, .profile-card {
+        animation: slideUp 0.8s ease-out;
+    }
+}
+
+/* Logo Styles */
+.logo-container {
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.logo-img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.hero-logo {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        height: 160px;
+    }
+    .logo-img {
+        height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-logo {
+        height: 130px;
+    }
+    .logo-img {
+        height: 45px;
+    }
+}
+
+/* Remove Why Choose Us styles */
+.why-choose-us,
+.feature-card,
+.feature-icon,
+.feature-card h3,
+.feature-card p {
+    /* Remove these styles */
+}
+
+.intro-section {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.intro-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.intro-section img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.intro-section img:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 991px) {
+    .intro-section {
+        text-align: center;
+    }
+    
+    .feature-list li {
+        justify-content: center;
+    }
+    
+    .intro-section img {
+        margin-top: 3rem;
+    }
+}
+
+.trust-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+    margin-bottom: 0;
+}
+
+.trust-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.trust-card:hover {
+    transform: translateY(-10px);
+}
+
+.trust-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.trust-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.trust-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.trust-card p {
+    color: var(--text-color);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .trust-card {
+        margin-bottom: 2rem;
+    }
+}
+
+.contact-section {
+    padding: 80px 0;
+    background: white;
+    margin-bottom: 0;
+} 
