@@ -202,7 +202,7 @@
                     <div class="card pricing-card">
                         <div class="card-body">
                             <h5 class="card-title">Movie Partner <span class="emoji">🎬</span></h5>
-                            <h3 class="price">₹3,499<span>/session</span></h3>
+                            <h3 class="price">₹2,999<span>/session</span></h3>
                             <ul class="list-unstyled">
                                 <li><i class="fas fa-check"></i> Cinema companion</li>
                                 <li><i class="fas fa-check"></i> Movie discussions</li>
@@ -360,9 +360,20 @@
                         </div>
                         <h3>Ready to Book?</h3>
                         <p class="booking-description">Choose your perfect companion and create unforgettable memories. Click below to start your booking process.</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyNLenQEllmJLEhv3fVzsiYe4rTTk_8rPccTQAS4hEYyLNzA/viewform" target="_blank" class="btn btn-primary btn-lg booking-btn">
+                        
+                        <!-- Terms & Conditions Checkbox -->
+                        <div class="terms-checkbox-container mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="termsCheckbox" required>
+                                <label class="form-check-label" for="termsCheckbox">
+                                    I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal" class="terms-link">Terms & Conditions</a>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button id="bookNowBtn" class="btn btn-primary btn-lg booking-btn" disabled>
                             <i class="fas fa-pen-fancy"></i> Book Now
-                        </a>
+                        </button>
                         <div class="booking-features">
                             <div class="feature-item">
                                 <i class="fas fa-shield-alt"></i>
@@ -382,6 +393,75 @@
             </div>
         </div>
     </section>
+
+    <!-- Terms & Conditions Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Terms & Conditions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="terms-content">
+                        <h6>1. Introduction</h6>
+                        <p>Welcome to Rent A Romio ("Company", "We", "Our", "Us"). By accessing or using our website, mobile application, or services, you ("User", "Client", or "Customer") agree to be bound by these Terms & Conditions. If you do not agree with any part of these Terms, please discontinue using our services.</p>
+                        
+                        <h6>2. Nature of Services</h6>
+                        <p>Rent A Romio is an online companionship platform that connects verified male companions ("Romios") with women seeking friendly, social, and lifestyle companionship experiences. All experiences are non-physical, consent-based, and purely social interactions such as coffee or movie outings, event attendance, city travel, emotional support, and fitness activities. No sexual, escort, or adult entertainment services are provided.</p>
+                        
+                        <h6>3. Eligibility</h6>
+                        <p>The client must be 18 years or older to use the services. Clients must provide accurate and verifiable personal details during registration and booking. If any false information is found, the Company reserves the right to cancel or terminate service without refund.</p>
+                        
+                        <h6>4. Expenses During Meeting</h6>
+                        <p>Any expenses incurred during the meeting such as food, beverages, movie tickets, travel fares, or entry passes will be fully borne by the client. The companion will not pay or contribute to any cost related to the outing.</p>
+                        
+                        <h6>5. Booking and Payments</h6>
+                        <p>All bookings must be made through the official website. Payments must be completed in advance using approved payment methods. Once a booking is confirmed, rescheduling or cancellation is subject to our Refund and Cancellation Policy.</p>
+                        
+                        <h6>6. Refund & Cancellation Policy</h6>
+                        <p>Cancellations made within 24 hours of booking will not be eligible for any refund. Once a booking is confirmed, no monetary refund will be provided. If the client wishes to cancel, they may reschedule within 15 days of the original booking date.</p>
+                        
+                        <h6>7. Payment Dispute Protection</h6>
+                        <p>All payments must be made in advance through authorized payment gateways. The Company shall not be held responsible for failed, delayed, or declined payments due to third-party gateway errors.</p>
+                        
+                        <h6>8. User Conduct</h6>
+                        <p>Clients must behave respectfully toward companions. Physical contact, inappropriate behavior, harassment, or any illegal proposal is strictly prohibited. Companions have full rights to discontinue the session if they feel unsafe or uncomfortable.</p>
+                        
+                        <h6>9. Safety and Privacy</h6>
+                        <p>All companions are background-verified and trained to maintain a professional environment. The Company ensures confidentiality of user information. Clients must not record, share, or post personal details without explicit consent.</p>
+                        
+                        <h6>10. Liability Limitation</h6>
+                        <p>Rent A Romio acts solely as a platform connecting clients and companions. The Company shall not be held liable for any personal misunderstandings, disputes, losses, or incidents occurring during or after the booked session.</p>
+                        
+                        <h6>11. Relationship Between Parties</h6>
+                        <p>All companions act as independent service providers, not employees of the Company. The Company merely facilitates communication and booking between clients and companions.</p>
+                        
+                        <h6>12. Misuse / Harassment Clause</h6>
+                        <p>Any attempt to contact a companion outside the platform or engage in harassment will result in immediate termination of the user account. The Company reserves the right to report such behavior to legal authorities.</p>
+                        
+                        <h6>13. Platform Usage</h6>
+                        <p>Users may not misuse the platform for fraudulent, illegal, or abusive purposes. Any attempt to hack or interfere with the platform's systems is strictly prohibited.</p>
+                        
+                        <h6>14. Modification of Terms</h6>
+                        <p>The Company reserves the right to modify these Terms at any time without prior notice. Updated terms will be posted on the official website and shall become effective immediately upon posting.</p>
+                        
+                        <h6>15. Termination</h6>
+                        <p>The Company may suspend or terminate user access immediately for any breach of these Terms, abusive behavior, or violation of platform policies.</p>
+                        
+                        <h6>16. Legal Disclaimer</h6>
+                        <p>Rent A Romio operates purely as a social companionship platform. It does not promote any form of adult entertainment or sexual services. All interactions must be professional, respectful, and consent-based.</p>
+                        
+                        <h6>17. Governing Law & Jurisdiction</h6>
+                        <p>These Terms shall be governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts of Uttar Pradesh, India.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/+918368235765?text=Hi,%20I'm%20interested%20in%20your%20companionship%20service" class="whatsapp-btn" target="_blank">
@@ -409,6 +489,40 @@
                 navbar.classList.remove('scrolled');
             }
         });
+
+        // Terms & Conditions checkbox functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const termsCheckbox = document.getElementById('termsCheckbox');
+            const bookNowBtn = document.getElementById('bookNowBtn');
+            const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfyNLenQEllmJLEhv3fVzsiYe4rTTk_8rPccTQAS4hEYyLNzA/viewform';
+
+            // Enable/disable Book Now button based on checkbox
+            termsCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    bookNowBtn.disabled = false;
+                    bookNowBtn.classList.remove('btn-secondary');
+                    bookNowBtn.classList.add('btn-primary');
+                } else {
+                    bookNowBtn.disabled = true;
+                    bookNowBtn.classList.remove('btn-primary');
+                    bookNowBtn.classList.add('btn-secondary');
+                }
+            });
+
+            // Handle Book Now button click
+            bookNowBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (termsCheckbox.checked) {
+                    // Open Google Form in new tab
+                    window.open(googleFormUrl, '_blank');
+                } else {
+                    // Show alert if terms not accepted
+                    alert('Please accept the Terms & Conditions to proceed with booking.');
+                }
+            });
+        });
     </script>
 </body>
-</html> 
+</html>
+<!-- FORCE UPDATE: Movie Partner price ₹2,999 - $(Get-Date) -->
