@@ -1070,14 +1070,16 @@ body {
 
 .form-check {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     margin: 0;
 }
 
 .form-check-input {
     margin-right: 0.5rem;
+    margin-top: 0.15rem;
     transform: scale(1.2);
+    flex-shrink: 0;
 }
 
 .form-check-label {
@@ -1085,6 +1087,8 @@ body {
     color: #333;
     cursor: pointer;
     margin: 0;
+    line-height: 1.4;
+    flex: 1;
 }
 
 .terms-link {
