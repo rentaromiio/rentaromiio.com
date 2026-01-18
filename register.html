@@ -74,9 +74,9 @@ document.getElementById("regForm").addEventListener("submit", function(e){
   e.preventDefault();
 
   fetch("https://script.google.com/macros/s/AKfycbxqU0B8-9I00rGlB3QzCrkZy0Z2thEs0EJhHE6gBoxjz46XKNiuGhLNU-wJ_PiX3KrM/exec", {
-    method: "POST",
-    body: new FormData(this)
-  })
+  method: "POST",
+  body: new FormData(this)
+})
   .then(response => response.json())
   .then(data => {
     alert("Registration successful");
