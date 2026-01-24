@@ -1,41 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Complete Payment | Rentaromiio</title>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<meta charset="UTF-8">
+<title>Payment | Rentaromiio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(135deg,#0f0f0f,#1b1b1b);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+}
+.box{
+  background:#121212;
+  max-width:420px;
+  width:100%;
+  padding:32px;
+  border-radius:16px;
+  text-align:center;
+}
+.amount{
+  font-size:34px;
+  color:#f1c96b;
+  margin:10px 0 20px;
+}
+.pay-btn{
+  display:block;
+  padding:14px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#c89b3c,#f1c96b);
+  color:#000;
+  text-decoration:none;
+  font-weight:600;
+}
+.note{
+  margin-top:14px;
+  font-size:12px;
+  color:#aaa;
+}
+</style>
 </head>
-<body style="text-align:center;margin-top:80px">
+<body>
 
-<h2>Induction Fee Payment</h2>
+<div class="box">
+  <h2>Induction Fee</h2>
+  <div class="amount">₹9</div>
 
-<button id="payBtn">Pay Now</button>
+  <a class="pay-btn"
+     href="upi://pay?pa=6397325703@ybl&pn=Rentaromiio&am=9&cu=INR&tn=Rentaromiio Induction Fee">
+     Pay ₹9 via UPI
+  </a>
 
-<script>
-var options = {
-  "key": "RAZORPAY_KEY_ID",
-  "amount": 9,   // ₹499 = 49900 paise
-  "currency": "INR",
-  "name": "Rentaromiio",
-  "description": "Induction Fee",
-  "handler": function (response){
-    
-    fetch("https://script.google.com/macros/s/AKfycbxqU0B8-9I00rGlB3QzCrkZy0Z2thEs0EJhHE6gBoxjz46XKNiuGhLNU-wJ_PiX3KrM/exec", {
-      method: "POST",
-      body: JSON.stringify({
-        payment_id: response.razorpay_payment_id
-      })
-    });
-
-    alert("Payment Successful");
-    window.location.href = "thankyou.html";
-  }
-};
-
-document.getElementById("payBtn").onclick = function(){
-  var rzp = new Razorpay(options);
-  rzp.open();
-};
-</script>
+  <div class="note">
+    Pay using PhonePe / GPay / BHIM.<br>
+    Save your UPI reference number after payment.
+  </div>
+</div>
 
 </body>
 </html>
