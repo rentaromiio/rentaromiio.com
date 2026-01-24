@@ -17,6 +17,7 @@ body{
   align-items:center;
   justify-content:center;
   color:#fff;
+  padding:20px;
 }
 .box{
   background:#121212;
@@ -25,11 +26,14 @@ body{
   padding:32px;
   border-radius:16px;
   text-align:center;
+  box-shadow:0 25px 60px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.06);
 }
 .amount{
   font-size:34px;
   color:#f1c96b;
   margin:10px 0 20px;
+  font-weight:600;
 }
 .pay-btn{
   display:block;
@@ -39,11 +43,13 @@ body{
   color:#000;
   text-decoration:none;
   font-weight:600;
+  font-size:16px;
 }
 .note{
-  margin-top:14px;
+  margin-top:16px;
   font-size:12px;
   color:#aaa;
+  line-height:1.5;
 }
 </style>
 </head>
@@ -53,14 +59,16 @@ body{
   <h2>Induction Fee</h2>
   <div class="amount">₹9</div>
 
+  <!-- ✅ CASHFREE PAYMENT LINK -->
   <a class="pay-btn"
-     href="upi://pay?pa=6397325703@ybl&pn=Rentaromiio&am=9&cu=INR&tn=Rentaromiio Induction Fee">
-     Pay ₹9 via UPI
+     href="https://payments.cashfree.com/links?code=a9rad4si8k5g_AAAAAAASK7U"
+     target="_blank">
+     Pay ₹9 Securely
   </a>
 
   <div class="note">
-    Pay using PhonePe / GPay / BHIM.<br>
-    Save your UPI reference number after payment.
+    You will be redirected to Cashfree’s secure payment page.<br>
+    After successful payment, please return for verification.
   </div>
 </div>
 
