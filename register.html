@@ -147,15 +147,18 @@ document.getElementById("regForm").addEventListener("submit", function(e){
   })
   .then(res => res.json())
   .then(data => {
-    if (data.paymentLink) {
+    // ✅ Cashfree returns link_url
+    if (data.link_url) {
       window.location.href =
-        "payment.html?link=" + encodeURIComponent(data.paymentLink);
+        "payment.html?link=" + encodeURIComponent(data.link_url);
     } else {
       alert("Payment link generation failed. Try again.");
+      console.error("Cashfree response:", data);
     }
   })
-  .catch(() => {
+  .catch(err => {
     alert("Something went wrong. Please try again.");
+    console.error(err);
   });
 });
 </script>
