@@ -5,7 +5,6 @@
   <title>Induction Registration | Rentaromiio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -40,7 +39,6 @@
 
     .logo img{
       width:110px;
-      height:auto;
     }
 
     .subtitle{
@@ -66,12 +64,6 @@
       background:#181818;
       color:#fff;
       font-size:14px;
-      outline:none;
-    }
-
-    input:focus, select:focus{
-      border-color:#c89b3c;
-      box-shadow:0 0 0 1px rgba(200,155,60,0.3);
     }
 
     button{
@@ -106,17 +98,16 @@
   <div class="subtitle">Induction Registration</div>
 
   <form id="regForm">
-
     <label>Full Name</label>
     <input type="text" name="fullname" required>
 
     <label>Age</label>
     <input type="number" name="age" min="18" required>
 
-    <label>Email Address</label>
+    <label>Email</label>
     <input type="email" name="email" required>
 
-    <label>Phone Number</label>
+    <label>Phone</label>
     <input type="tel" name="phone" required>
 
     <label>Gender</label>
@@ -128,7 +119,6 @@
     </select>
 
     <button type="submit">Proceed to Payment</button>
-
   </form>
 
   <div class="note">
@@ -141,24 +131,24 @@
 document.getElementById("regForm").addEventListener("submit", function(e){
   e.preventDefault();
 
-  fetch("https://script.google.com/macros/s/AKfycbx-gJs0PsAJOyieokvMXcmSfEoJPhNF9F1U2Yujj8FrbDjL1UKydeNjgm7Sy2v0mD_S/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbynHEa_wnY0xRd5ILB4TguLSvlNMrZr49bMp1C7SNFx0w0N-FlvUELmDOYffsIVPDNk/exec", {
     method: "POST",
     body: new FormData(this)
   })
   .then(res => res.json())
   .then(data => {
-    // ✅ Cashfree returns link_url
+    // ✅ CASHFREE RETURNS link_url
     if (data.link_url) {
       window.location.href =
         "payment.html?link=" + encodeURIComponent(data.link_url);
     } else {
-      alert("Payment link generation failed. Try again.");
-      console.error("Cashfree response:", data);
+      alert("Payment link generation failed. Please try again.");
+      console.error("Response:", data);
     }
   })
   .catch(err => {
-    alert("Something went wrong. Please try again.");
     console.error(err);
+    alert("Something went wrong. Please try again.");
   });
 });
 </script>
