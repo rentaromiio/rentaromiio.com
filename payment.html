@@ -59,11 +59,9 @@ body{
   <h2>Induction Fee</h2>
   <div class="amount">₹9</div>
 
-  <!-- ✅ CASHFREE PAYMENT LINK -->
-  <a class="pay-btn"
-     href="https://payments.cashfree.com/links?code=a9rad4si8k5g_AAAAAAASK7U"
-     target="_blank">
-     Pay ₹9 Securely
+  <!-- ✅ DYNAMIC CASHFREE LINK -->
+  <a class="pay-btn" id="payBtn" target="_blank">
+    Pay ₹9 Securely
   </a>
 
   <div class="note">
@@ -71,6 +69,19 @@ body{
     After successful payment, please return for verification.
   </div>
 </div>
+
+<script>
+  // 🔥 Read per-user Cashfree link from URL
+  const params = new URLSearchParams(window.location.search);
+  const link = params.get("link");
+
+  if (link) {
+    document.getElementById("payBtn").href = link;
+  } else {
+    alert("Invalid or expired payment session.");
+    document.getElementById("payBtn").style.display = "none";
+  }
+</script>
 
 </body>
 </html>
