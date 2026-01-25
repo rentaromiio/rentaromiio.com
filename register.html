@@ -9,9 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    *{
-      box-sizing:border-box;
-    }
+    *{ box-sizing:border-box; }
 
     body{
       margin:0;
@@ -69,21 +67,11 @@
       color:#fff;
       font-size:14px;
       outline:none;
-      transition:all 0.2s ease;
-    }
-
-    input::placeholder{
-      color:#666;
     }
 
     input:focus, select:focus{
       border-color:#c89b3c;
       box-shadow:0 0 0 1px rgba(200,155,60,0.3);
-    }
-
-    select option{
-      background:#181818;
-      color:#fff;
     }
 
     button{
@@ -97,12 +85,6 @@
       font-weight:600;
       font-size:15px;
       cursor:pointer;
-      transition:transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    button:hover{
-      transform:translateY(-1px);
-      box-shadow:0 10px 25px rgba(200,155,60,0.4);
     }
 
     .note{
@@ -110,16 +92,6 @@
       font-size:11px;
       color:#777;
       text-align:center;
-      line-height:1.5;
-    }
-
-    @media(max-width:480px){
-      .container{
-        padding:28px 22px;
-      }
-      .logo img{
-        width:95px;
-      }
     }
   </style>
 </head>
@@ -136,23 +108,23 @@
   <form id="regForm">
 
     <label>Full Name</label>
-    <input type="text" name="fullname" placeholder="Enter your full name" required>
+    <input type="text" name="fullname" required>
 
     <label>Age</label>
-    <input type="number" name="age" placeholder="18+" min="18" required>
+    <input type="number" name="age" min="18" required>
 
     <label>Email Address</label>
-    <input type="email" name="email" placeholder="you@example.com" required>
+    <input type="email" name="email" required>
 
     <label>Phone Number</label>
-    <input type="tel" name="phone" placeholder="10 digit mobile number" required>
+    <input type="tel" name="phone" required>
 
     <label>Gender</label>
     <select name="gender" required>
       <option value="">Select</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-      <option value="Other">Other</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
     </select>
 
     <button type="submit">Proceed to Payment</button>
@@ -169,13 +141,18 @@
 document.getElementById("regForm").addEventListener("submit", function(e){
   e.preventDefault();
 
-  fetch("https://script.google.com/macros/s/AKfycbxqU0B8-9I00rGlB3QzCrkZy0Z2thEs0EJhHE6gBoxjz46XKNiuGhLNU-wJ_PiX3KrM/exec", {
+  fetch("https://script.google.com/macros/s/AKfycby75rD0vRXKhgi7EVd_XZR5C31JDvMY-RxngBW1DEV9oy79MiyAr4W9HBrI7ZnKfJK5/exec", {
     method: "POST",
     body: new FormData(this)
   })
   .then(res => res.json())
-  .then(() => {
-    window.location.href = "payment.html";
+  .then(data => {
+    if (data.paymentLink) {
+      window.location.href =
+        "payment.html?link=" + encodeURIComponent(data.paymentLink);
+    } else {
+      alert("Payment link generation failed. Try again.");
+    }
   })
   .catch(() => {
     alert("Something went wrong. Please try again.");
